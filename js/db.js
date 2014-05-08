@@ -22,7 +22,7 @@ inicializaBanco = function(){
 };
 
 criaTabela = function(localDb){
-    localDb.execute("DROP TABLE razao");
+    //localDb.execute("DROP TABLE razao");
     //Cria a tabela de Razões
     localDb.execute("CREATE TABLE IF NOT EXISTS razao (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, razao VARCHAR NOT NULL, tipo VARCHAR NOT NULL)",successCreateTable);
     //Cria a tabela de Registros
