@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Formulário Mobile para inserção de despesas pessoais
+-->
+<html>
+    <head>
+        <title>lista de Razões</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <!-- Biblioteca Jquery -->
+        <script src="js/jquery.js"></script>
+        <script src="js/util.js"></script>
+        <!-- Biblioteca Jquery Mobile -->
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css">
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/jqm-demos.css">
+        <!-- Folha de estilos personalizada -->
+	<link rel="stylesheet" href="css/styles.css">
+        <!-- Script com funcoes de bd -->
+        <script src="js/Db.Class.js"></script>
+        <!-- Script com funcoes de bd -->
+        <script src="js/db.js"></script>
+        <!-- Script que grava as razões no local storage -->
+        <script src="js/razoes.js"></script>
+        
+        <script>
+            listaRazao();
+        </script>
+
+    </head>
+    <body>
+       <div data-role="page">
+           <!--Cabeçalho do Aplicativo-->
+           <div data-role="header" data-positio="fixed">
+               <h1>Cadastro de Razões</h1> 
+               <a href="index.html" data-ajax="false" class=" ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-left"></a>
+               <a href="configuracao.html"  class=" ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-right"></a>
+           </div>
+           <!--Corpo do Aplicativo-->
+           <div data-role="main" class="ui-content">
+            <ul id="razoes" data-role="listview" data-inset="true">
+               
+            </ul>
+               
+           </div>
+           <!--Rodapé do Aplicativo-->
+           <div data-role="footer" data-position="fixed">
+               <h3>Desenvolvido Por Deividi Anderson</h3>
+           </div>
+           
+       </div>
+    </body>
+</html>
+

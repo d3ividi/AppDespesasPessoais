@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Formulário Mobile para inserção de despesas pessoais
+-->
+<html>
+    <head>
+        <title>Form Despesas Pessoais</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!-- Biblioteca Jquery -->
+        <script src="js/jquery.js"></script>
+        <!-- Biblioteca Jquery Mobile -->
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css">
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/jqm-demos.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Script que envia dados -->
+        <script src="js/sendData.js"></script>
+        <!-- Script com a classe de manipulação do banco de dados -->
+        <script src="js/Db.Class.js"></script>
+        <!-- Script de manipulação do banco de dados -->
+        <script src="js/db.js"></script>
+        <!-- Script com funções pricipais-->
+        <script src="js/main.js"></script>
+        <!-- Script com funções utilitarias-->
+        <script src="js/util.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+           <!--Cabeçalho do Aplicativo-->
+           <div data-role="header" data-positio="fixed">
+               <h1 >Despesas Pessoais</h1> 
+               <a href="configuracao.html" class=" ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-right"></a>
+           </div>
+           <!--Corpo do Aplicativo-->
+           <div data-role="main" class="ui-content ">
+               <form method="POST" id="formRegistros" onSubmit="return insereRegistro();">
+                   
+                   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                       <legend>Tipo de Registro :</legend>
+                            <input type="radio" name="tipoRegistro" id="saida" value="Saída" required>
+                            <label for="saida">Saída</label>
+                            <input type="radio" name="tipoRegistro" id="entrada" value="Entrada" required>
+                            <label for="entrada">Entrada</label>
+                            
+                   </fieldset>
+                   
+                   <label for="classificacao" class="select">Tipo de Saída :</label>
+                    <select name="classificacao" id="classificacao" data-native-menu="false" required>
+                        <option>Selecione um tipo de registro</option>
+                    </select>
+                    <label for="detalhes">Detalhes:</label>
+                    <input type="text" name="detalhes" id="detalhes" value="" required>
+                    <label for="valor">Valor:</label>
+                    <input type="number" name="valor" id="valor" value="" step="0.01" required>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a"><input type="submit" value="Enviar" data-theme="a"></div>
+                        <div class="ui-block-b"><input type="reset" value="Cancelar" data-theme="b"></div>
+                        
+                    </fieldset>
+                    <div class="topbar" id="statusMessage" >Registrado com sucesso</div>
+               </form>  
+               
+           </div>
+           <!--Rodapé do Aplicativo-->
+           <div data-role="footer" data-position="fixed">
+               <h3>Desenvolvido Por Deividi Anderson</h3>
+           </div>
+           
+       </div>
+    </body>
+</html>

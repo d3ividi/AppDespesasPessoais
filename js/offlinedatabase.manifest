@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+main.js
+db.js
+Db.class.js
+cadastraRazoes.js
+sendData.js
+razoes.js
+util.js
+number-polyfill.js
+date.js
+configuraChave.js

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Formulário Mobile para inserção de despesas pessoais
+-->
+<html>
+    <head>
+        <title>Cadastro de Razões</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <!-- Biblioteca Jquery -->
+        <script src="js/jquery.js"></script>
+        <!-- Script com funções utilitarias-->
+        <script src="js/util.js"></script>
+        <!-- Biblioteca Jquery Mobile -->
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css">
+        <!-- Folha de estilos Jquery Mobile -->
+	<link rel="stylesheet" href="css/jqm-demos.css">
+        <!-- Folha de estilos personalizada -->
+	<link rel="stylesheet" href="css/styles.css">
+        <!-- Script com funcoes de bd -->
+        <script src="js/Db.Class.js"></script>
+        <!-- Script com funcoes de bd -->
+        <script src="js/db.js"></script>
+        <!-- Script que grava as razões no local storage -->
+        <script src="js/razoes.js"></script>
+    </head>
+    <body>
+        
+       <div data-role="page">
+           <!--Cabeçalho do Aplicativo-->
+           <div data-role="header" data-positio="fixed">
+               <h1>Cadastro de Razões</h1> 
+               <a href="configuracao.html" class=" ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-right"></a>
+               <a href="index.html" data-ajax="false"  class=" ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-left"></a>
+           </div>
+           <!--Corpo do Aplicativo-->
+           <div data-role="main" class="ui-content">
+               <form method="POST" id="formRazoes" onSubmit="return cadastraRazao();">
+                   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                       <legend>Classificação da Razão :</legend>
+                            <input type="radio" name="tipoRegistro" id="saida" value="Saída" required>
+                            <label for="saida">Saída</label>
+                            <input type="radio" name="tipoRegistro" id="entrada" value="Entrada" required>
+                            <label for="entrada">Entrada</label>
+                   </fieldset>
+                    <label for="razao">Razão:</label>
+                    <input type="text" name="razao" id="razao" value="" required>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a"><input type="submit" name="enviar" value="Enviar" data-theme="a"></div>
+                        <div class="ui-block-b"><input type="button" name="cancelar" id="cancelar" value="Cancelar" data-theme="b"/></div>
+                    </fieldset>
+                    <div id="dialog-confirmw" data-theme="b"></div>
+                    <div class="topbar" id="statusMessage" >Razão cadastrada com sucesso</div>
+                </form>
+                     
+               <!--Poupop de confirmação de exclusão-->
+		<div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" style="max-width:400px;" class="ui-corner-all">
+			<div data-role="header" data-theme="a" class="ui-corner-top">
+				<h1>Antenção!</h1>
+			</div>
+			<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+				<h3 class="ui-title">Deseja realmente deletar esta razão?</h3>
+				<p>Esta ação não pode ser revertida.</p>
+				<a href="#" id="dialog-confirm-true" data-role="button" data-inline="true" data-rel="back" data-theme="c">Sim</a>    
+				<a href="#" id="dialog-confirm-false" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">Não</a>  
+			</div>
+		</div>
+           </div>
+               
+           <!--Rodapé do Aplicativo-->
+           <div data-role="footer" data-position="fixed">
+               <h3>Desenvolvido Por Deividi Anderson</h3>
+           </div>
+            <script>
+                editaRazao();
+            </script>
+       
+       </div>
+    </body>
+</html>

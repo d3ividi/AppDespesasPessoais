@@ -1,0 +1,27 @@
+.right{
+   float:right;
+}
+
+.topbar{ 
+    background: #1dc116; 
+    padding: 10px; 
+    text-align: center; 
+    color: white;
+    border-radius: 5px;
+    box-shadow: 20px;
+    opacity: 0.8;
+    display:none;  
+}
+
+#dialog-confirm{
+    width:80%;
+    height:100px;
+    margin: auto;
+    padding:5%;
+    border:1px solid;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 30px 0px rgba(47, 50, 50, 0.75);
+    -moz-box-shadow:    1px 1px 30px 0px rgba(47, 50, 50, 0.75);
+    box-shadow:         1px 1px 30px 0px rgba(47, 50, 50, 0.75);
+    float:top;
+}
